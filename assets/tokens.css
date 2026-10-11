@@ -1,0 +1,60 @@
+/* =====================================================================
+   PDS PLATEAU 介護ソフト 共通デザイントークン (tokens.css)
+   そのまま読み込んで使用可。詳細ルールは design.md を参照。
+   ===================================================================== */
+
+:root{
+  /* --- Brand --- */
+  --pds-primary:        #3335BB;
+  --pds-primary-dark:   #282A99;  /* hover / pressed / 見出し */
+  --pds-tint:           #DDE1F7;  /* 選択背景 */
+  --pds-tint-weak:      #EEF0FB;  /* ヘッダー帯 / 補助背景 */
+
+  /* --- Neutral (白→黒) --- */
+  --pds-white:          #FFFFFF;
+  --pds-bg:             #F4F5FB;  /* 画面背景 */
+  --pds-border:         #E4E6F0;  /* 枠線 */
+  --pds-border-input:   #CDD1E4;  /* 入力欄の枠 */
+  --pds-text-muted:       #686F88;  /* 補足文字（白/薄灰背景で4.5:1以上を確保） */
+  --pds-text-placeholder: #6C7494;  /* プレースホルダ（4.5:1以上） */
+  --pds-text-sub:       #555B73;  /* 副文字 */
+  --pds-text:           #14172B;  /* 本文・濃 */
+
+  /* --- 状態色（意味を固定） --- */
+  --pds-success:        #1C7B51;  --pds-success-bg: #E6F4EC;  /* 文字を濃色化し背景上で4.5:1以上 */
+  --pds-warning:        #956319;  --pds-warning-bg: #FBF1DC;  /* 同上 */
+  --pds-danger:         #C0392B;  --pds-danger-bg:  #FBE9E7;
+  --pds-info:           #3335BB;  --pds-info-bg:    #EEF0FB;
+
+  /* --- スペーシング（8の倍数） --- */
+  --pds-space-1: 4px;  --pds-space-2: 8px;  --pds-space-3: 12px;
+  --pds-space-4: 16px; --pds-space-6: 24px; --pds-space-8: 32px;
+  --pds-space-12: 48px;
+
+  /* --- 角丸 --- */
+  --pds-radius-control: 8px;
+  --pds-radius-card:    14px;
+
+  /* --- コントロール高さ --- */
+  --pds-control-h:      44px;  /* 標準 */
+  --pds-control-h-lg:   48px;  /* 現場（大きめ） */
+  --pds-control-h-sm:   36px;  /* 小 */
+
+  /* --- タイポ（本文最小18px） --- */
+  --pds-font-ui:   "Noto Sans JP","BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  --pds-font-body: "BIZ UDPGothic","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  --pds-fs-title:   36px;  /* 900 */
+  --pds-fs-section: 26px;  /* 700 */
+  --pds-fs-subhead: 20px;  /* 700 */
+  --pds-fs-body:    18px;  /* 400 最小 */
+  --pds-fs-note:    14px;  /* 500 */
+}
+
+/* 日本語字形を必ず使う（中国字形フォールバック防止）。
+   HTMLには必ず <html lang="ja"> を付けること。 */
+html{ font-family: var(--pds-font-ui); color: var(--pds-text); }
+body{ margin:0; background: var(--pds-bg); }
+*{ box-sizing: border-box; }
+
+/* 日本語を文節（意味のまとまり）で折り返す。単語の途中で改行される事故を防ぐ */
+p, li, h1, h2, h3, dt, dd, th, td, label{ word-break: auto-phrase; }
